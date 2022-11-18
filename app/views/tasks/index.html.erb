@@ -1,0 +1,16 @@
+<h1 class="text-secondary border-bottom text-center">my tasks</h1>
+
+<ul class="bg-danger p-2 text-dark bg-opacity-10 w-100 p-3 text-center fs-3 position-absolute top-50 start-50 translate-middle">
+  <% @tasks.each do |task| %>
+    <li><%= link_to(task.title, task_path(task)) %>
+
+<div class="btn btn-outline-dark btn-sm">
+    <%= link_to "Delete",
+  task_path(task.id),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%> </li></div>
+  <% end %>
+</ul>
+<div class="btn btn-outline-dark btn-sm">
+<%= link_to "create tasks",new_task_path %>
+</div>

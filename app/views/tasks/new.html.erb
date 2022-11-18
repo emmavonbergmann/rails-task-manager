@@ -1,0 +1,13 @@
+<h1>add a new task</h1>
+<%= form_with model: @task do |t| %>
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+  <%= t.label :details %>
+  <%= t.text_field :details %>
+  <%= t.label :completed %>
+  <%= check_box_tag :completed %>
+  <%= t.submit %>
+<% end %>
+<div class="btn btn-light">
+<%= link_to "all tasks",root_path %>
+</div>
